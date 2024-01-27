@@ -5,6 +5,10 @@ function openTabsWithDelay(urls) {
         setTimeout(() => {
           openNextTab(index + 1);
         }, 3000);
+        // Adding a delay before closing the tab
+      setTimeout(function () {
+          window.close();
+      }, 15000); 
       }
     };
   
