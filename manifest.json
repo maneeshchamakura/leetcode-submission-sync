@@ -1,0 +1,25 @@
+{
+    "name": "Leetcode Submissions Sync",
+    "version": "1.0.0",
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+    "description": "submit leetcode problems",
+    "manifest_version": 3,
+    "author": "Maneesh Reddy Chamakura",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Leetcode Submission sync"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://leetcode.com/*"],
+        "js": ["contentScript.js"]
+      },
+      {
+        "matches": ["https://leetcode.com/api/submissions/?offset*"],
+        "js": ["extractSubLinks.js"]
+      }
+    ]
+}
