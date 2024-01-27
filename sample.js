@@ -29,3 +29,4 @@ function copyToClipboard(text) {
     console.log('Copied to clipboard: ' + text);
 }
 copyToClipboard("[" + found_links.join(',\n') + "]")
+JSON.stringify(found_links)
