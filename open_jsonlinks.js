@@ -1,19 +1,16 @@
 function openTabsWithDelay(urls) {
-    const openNextTab = (index) => {
-      if (index < urls.length) {
-        window.open(urls[index], '_blank');
-        setTimeout(() => {
-          openNextTab(index + 1);
-        }, 3000);
-        // Adding a delay before closing the tab
-      setTimeout(function () {
-          window.close();
-      }, 15000); 
-      }
-    };
-  
-    openNextTab(0);
-  }
+  const openNextTab = (index) => {
+    if (index < urls.length) {
+      const newTab = window.open(urls[index], '_blank');
+      setTimeout(() => {
+        newTab.close();
+        openNextTab(index + 1);
+      }, 5000);
+    }
+  };
+
+  openNextTab(0);
+}
   
   sub_urls = []
   temp =1020;
